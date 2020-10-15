@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     let redView = UIView()
     let blueView = UIView()
-    
+    let yellowView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         curtOnMiddleViewXStackView(true)
@@ -65,8 +66,13 @@ class ViewController: UIViewController {
     func curtOnMiddleViewXStackView(_ vertical: Bool){
         redView.backgroundColor = .red
         blueView.backgroundColor = .blue
+        yellowView.backgroundColor = .yellow
         
-        let stackView: UIStackView = UIStackView(arrangedSubviews: [redView,blueView])
+        let horizontalStackView: UIStackView = UIStackView(arrangedSubviews: [redView,blueView])
+        horizontalStackView.distribution = .fillEqually
+        
+        let stackView: UIStackView = UIStackView(arrangedSubviews: [horizontalStackView,yellowView])
+
         stackView.distribution = .fillEqually
         
         if (vertical){
