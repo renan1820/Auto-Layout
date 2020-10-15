@@ -10,38 +10,77 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let redView = UIView()
+    let blueView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let redView = UIView()
-        
-        view.addSubview(redView
-        )
-        redView.backgroundColor = .red
-        
-        //Setando nossas Constraints de forma manual
-        redView.translatesAutoresizingMaskIntoConstraints = false
-        
-        //Config contraint Top com o layout pai e habilitando nossa constraint na nossa red view
-//        redView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        
-        //leadingAnchor = left // trailingAnchor = right
-//        redView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 50).isActive = true
-        
-//        redView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -50).isActive = true
-        
-//        redView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -50).isActive = true
-        
-        //Constraint Altura e largura
-        
-        redView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        redView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        
-        redView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        redView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        curtOnMiddleViewXStackView(true)
     }
     
+    func setupRedView(){
+        view.addSubview(redView)
+        redView.backgroundColor = .red
+        redView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setupBlueView(){
+        view.addSubview(blueView)
+        blueView.backgroundColor = .blue
+        blueView.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    func curtOnMiddleViewYManual(){
+        setupRedView()
+        setupBlueView()
+        
+        redView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        redView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        redView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        redView.bottomAnchor.constraint(equalTo: view.centerYAnchor.self).isActive = true
+        
+        blueView.topAnchor.constraint(equalTo: redView.bottomAnchor).isActive = true
+        blueView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        blueView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    func curtOnMiddleViewXManual(){
+        setupRedView()
+        setupBlueView()
+        
+        redView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        redView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        redView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
+        redView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        blueView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blueView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        blueView.leadingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
+        blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+    }
+    
+    func curtOnMiddleViewXStackView(_ vertical: Bool){
+        redView.backgroundColor = .red
+        blueView.backgroundColor = .blue
+        
+        let stackView: UIStackView = UIStackView(arrangedSubviews: [redView,blueView])
+        stackView.distribution = .fillEqually
+        
+        if (vertical){
+            stackView.axis = .vertical
+        }
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+    }
     
 }
 
