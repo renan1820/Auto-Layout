@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        curtOnMiddleViewXStackView(true)
+        putFullView()
     }
     
     func setupRedView(){
@@ -30,6 +30,18 @@ class ViewController: UIViewController {
         blueView.backgroundColor = .blue
         blueView.translatesAutoresizingMaskIntoConstraints = false
         
+    }
+    func putFullView(){
+        view.addSubview(yellowView)
+        yellowView.backgroundColor = .yellow
+
+        yellowView.preencher(
+            top: view.topAnchor,
+            leading: view.leadingAnchor,
+            trailing: view.trailingAnchor,
+            bottom: view.bottomAnchor,
+            padding: .init(top: 50, left: 30, bottom: 100, right: 50)
+        )
     }
     
     func curtOnMiddleViewYManual(){
@@ -56,11 +68,11 @@ class ViewController: UIViewController {
         redView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
         redView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        blueView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        blueView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        blueView.leadingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
-        blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+//        blueView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        blueView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        blueView.leadingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
+//        blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//
     }
     
     func curtOnMiddleViewXStackView(_ vertical: Bool){
@@ -82,8 +94,10 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = 
+        true
         stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         
         
     }

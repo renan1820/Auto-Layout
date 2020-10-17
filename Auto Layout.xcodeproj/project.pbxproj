@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D10BD2F253B6DD8003B9F96 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD2E253B6DD8003B9F96 /* UIView.swift */; };
 		8D3715B42537FB77009DDE07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3715B32537FB77009DDE07 /* AppDelegate.swift */; };
 		8D3715B62537FB77009DDE07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3715B52537FB77009DDE07 /* SceneDelegate.swift */; };
 		8D3715B82537FB77009DDE07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3715B72537FB77009DDE07 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D10BD2E253B6DD8003B9F96 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8D3715B02537FB77009DDE07 /* Auto Layout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3715B32537FB77009DDE07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3715B52537FB77009DDE07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				8D3715B32537FB77009DDE07 /* AppDelegate.swift */,
 				8D3715B52537FB77009DDE07 /* SceneDelegate.swift */,
 				8D3715B72537FB77009DDE07 /* ViewController.swift */,
+				8D10BD2E253B6DD8003B9F96 /* UIView.swift */,
 				8D3715B92537FB77009DDE07 /* Main.storyboard */,
 				8D3715BC2537FB79009DDE07 /* Assets.xcassets */,
 				8D3715BE2537FB79009DDE07 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D10BD2F253B6DD8003B9F96 /* UIView.swift in Sources */,
 				8D3715B82537FB77009DDE07 /* ViewController.swift in Sources */,
 				8D3715B42537FB77009DDE07 /* AppDelegate.swift in Sources */,
 				8D3715B62537FB77009DDE07 /* SceneDelegate.swift in Sources */,
