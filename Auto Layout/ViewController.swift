@@ -35,14 +35,7 @@ class ViewController: UIViewController {
         view.addSubview(yellowView)
         yellowView.backgroundColor = .yellow
 
-        yellowView.preencher(
-            top: view.topAnchor,
-            leading: view.leadingAnchor,
-            trailing: nil,
-            bottom: nil,
-            padding: .init(top: 50, left: 30, bottom: 100, right: 50),
-            size: .init(width: 200, height: 500)
-        )
+        yellowView.preencherSuperView(padding: .init(top: 50, left: 50, bottom: 50, right: 50))
     }
     
     func curtOnMiddleViewYManual(){
